@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# ACADOS auto-generated 파일 (실행 시 자동 생성, 재현 가능)
+c_generated_code_*/
+*.json
+
+# 시뮬레이션 결과 데이터 (run_comparison.py 실행 시 자동 생성)
+# MPPI_cross / MPPI_DOB_cross 는 71MB — GitHub 한도 초과
+*.npz
+
+# 실험 중 생긴 백업 데이터 (논문 최종 결과 아님)
+backup_*/
+tuning_backups/
+
+# matplotlib 임시 출력
+Figure_*.png
