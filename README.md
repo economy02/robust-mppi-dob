@@ -54,6 +54,34 @@ MPPI+DOB는 장애물을 부드럽게 회피하면서도 목표 궤적으로 빠
 
 ---
 
+### 3D 시뮬레이션 스냅샷
+
+UR5 팔의 실제 자세와 엔드이펙터 궤적을 3D로 렌더링한 스냅샷입니다.  
+**파란 링크**는 팔 링크, **plasma colormap 선**은 지금까지 지나온 EE 궤적, **회색 반투명 선**은 MPPI 샘플 궤적, **빨강/파랑 구체**는 교차 동적 장애물입니다.  
+왼쪽(주황 타이틀)이 MPPI, 오른쪽(파란 타이틀)이 MPPI+DOB입니다.
+
+![3D Snapshots](snapshots/snapshot_strip_all.png)
+
+| t = 0.0 s (시작) | t = 2.5 s (장애물 접근) | t = 5.0 s (장애물 교차) |
+|:---:|:---:|:---:|
+| ![t=0.0s](snapshots/snapshot_t0p0.png) | ![t=2.5s](snapshots/snapshot_t2p5.png) | ![t=5.0s](snapshots/snapshot_t5p0.png) |
+
+| t = 7.5 s (후반부) | t = 9.8 s (완주 직전) |
+|:---:|:---:|
+| ![t=7.5s](snapshots/snapshot_t7p5.png) | ![t=9.8s](snapshots/snapshot_t9p8.png) |
+
+---
+
+### 3D 애니메이션 (MP4)
+
+UR5 팔의 전체 10초 시뮬레이션을 3D 애니메이션으로 담은 영상입니다.  
+MPPI 샘플 궤적 100개(상위 3개 노란색 강조), 동적 장애물 구체, 실시간 추적 오차 패널이 함께 표시됩니다.  
+아래 썸네일을 클릭하면 MP4 영상으로 이동합니다.
+
+[![3D Animation Thumbnail](snapshots/snapshot_t5p0.png)](videos/mppi_cross_zoomed.mp4)
+
+---
+
 ## 파일 구조
 
 ```
@@ -65,8 +93,12 @@ MPPI+DOB는 장애물을 부드럽게 회피하면서도 목표 궤적으로 빠
 ├── sqp_cross_controller.py    # SQP + DOB, 교차 동적 장애물 전용  (acados)
 │
 ├── run_comparison.py          # 컨트롤러 비교 실행 메인
+├── save_figures.py            # 논문·발표용 PNG 일괄 저장 스크립트
+├── save_snapshots.py          # 3D 스냅샷 PNG 생성 스크립트
 │
-└── paper_figures/             # 실험 결과 그림
+├── paper_figures/             # 실험 결과 그림 (논문용, 300 DPI)
+├── snapshots/                 # 3D 시뮬레이션 스냅샷 (키 타임스텝별)
+└── videos/                    # 3D 애니메이션 MP4
 ```
 
 ---
